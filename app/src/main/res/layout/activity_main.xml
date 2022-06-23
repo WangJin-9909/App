@@ -1,18 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <com.example.core_ui.viewpager.CustomerViewPager
+        android:id="@+id/viewpager_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.example.core_ui.tabs.TabsIndicator
+        android:id="@+id/tab_indicators"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.example.core_ui.tabs.TabView
+            android:id="@+id/tab_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="8dp"
+            app:badgeBackgroundColor="@android:color/holo_blue_dark"
+            app:tabIconNormal="@mipmap/tab_home_normal_v6"
+            app:tabIconSelected="@mipmap/tab_home_select_v6"
+            app:tabText="首页"
+            app:tabTextSize="10sp"
+            app:textColorNormal="#979FA7"
+            app:textColorSelected="#C2A357" />
+
+        <com.example.core_ui.tabs.TabView
+            android:id="@+id/tab_financial"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="8dp"
+            app:tabIconNormal="@mipmap/tab_wealth"
+            app:tabIconSelected="@mipmap/tab_wealth_select"
+            app:tabText="首页"
+            app:tabTextSize="10sp"
+            app:textColorNormal="#979FA7"
+            app:textColorSelected="#C2A357" />
+
+
+        <com.example.core_ui.tabs.TabView
+            android:id="@+id/tab_safe"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="8dp"
+            app:tabIconNormal="@mipmap/tab_live"
+            app:tabIconSelected="@mipmap/tab_live_select"
+            app:tabText="首页"
+            app:tabTextSize="10sp"
+            app:textColorNormal="#979FA7"
+            app:textColorSelected="#C2A357" />
+
+
+        <com.example.core_ui.tabs.TabView
+            android:id="@+id/tab_fun"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:visibility="visible"
+            app:tabIconNormal="@mipmap/tab_my_normal_v6"
+            app:tabIconSelected="@mipmap/tab_my_select_v6"
+            app:tabText="我的"
+            app:tabTextSize="10sp"
+            app:textColorNormal="#979FA7"
+            app:textColorSelected="#C2A357" />
+
+
+    </com.example.core_ui.tabs.TabsIndicator>
+
+
+</LinearLayout>
