@@ -15,25 +15,12 @@ import retrofit2.http.Url;
 import rx.Observable;
 
 public interface AppService {
-    @Headers({"Content-Type: application/x-www-form-urlencoded"})
-    @POST
-    Observable<BaseResponse<JsonObject>> executePostForm(@Url String url, @Body Object param);
+    //wanandroid注册
+    @POST("user/register")
+    @FormUrlEncoded
+    Observable<BaseResponse> signup(@Field("username") String username,
+                                    @Field("password") String password,
+                                    @Field("repassword") String repassword);
 
-    /**
-     *
-     * @param url
-     * @param map  HashMap即可
-     * @return
-     */
-    @Headers({"Content-Type: application/json"})
-    @POST
-    Observable<JsonObject> executePostJson(@Url String url, @Body Object map);
-
-    @POST
-    Observable<BaseResponse<JsonObject>> executePost(@Url String var1, @Body Object var2, @Header("Content-Type") String var3);
-
-    @Headers({"Content-Type: application/json"})
-    @POST
-    Observable<JsonObject> executePostNew(@Url String url, @Body Object map, @HeaderMap Map<String, String> headMap);
 
 }

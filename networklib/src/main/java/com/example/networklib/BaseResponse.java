@@ -4,35 +4,44 @@ import com.google.gson.JsonObject;
 
 import java.io.Serializable;
 
-public class BaseResponse<T> implements Serializable {
-    private String code;
-    private String msg;
-    private T data;
+public class BaseResponse implements Serializable {
+    public String errorCode;
+    public String errorMsg;
+    public String  data;
 
     public BaseResponse() {
     }
 
-    public String getCode() {
-        return this.code == null ? "" : this.code;
+    public String getErrorCode() {
+        return errorCode;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
     }
 
-    public String getMsg() {
-        return this.msg == null ? "" : this.msg;
+    public String getErrorMsg() {
+        return errorMsg;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
     }
 
-    public T getData() {
-        return this.data == null ? (T)new JsonObject() : this.data;
+    public String getData() {
+        return data;
     }
 
-    public void setData(T data) {
+    public void setData(String data) {
         this.data = data;
+    }
+
+    @Override
+    public String toString() {
+        return "BaseResponse{" +
+                "errorCode='" + errorCode + '\'' +
+                ", errorMsg='" + errorMsg + '\'' +
+                ", data=" + data +
+                '}';
     }
 }

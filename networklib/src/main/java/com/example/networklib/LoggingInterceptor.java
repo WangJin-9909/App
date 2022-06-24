@@ -41,6 +41,7 @@ public class LoggingInterceptor implements Interceptor {
         log("url : " + request.url());
         log("method : " + request.method());
         log("time :" + tookMs + "ms");
+
         RequestBody requestBody = request.body();
         boolean hasRequestBody = requestBody != null;
         Headers requestHeaders = request.headers();
@@ -59,7 +60,6 @@ public class LoggingInterceptor implements Interceptor {
             }
             Buffer buffer = new Buffer();
             requestBody.writeTo(buffer);
-
             //编码设为UTF-8
             Charset charset = HttpUtil.UTF8;
             MediaType contentType = requestBody.contentType();
@@ -69,30 +69,21 @@ public class LoggingInterceptor implements Interceptor {
             if (HttpUtil.isPlaintext(buffer)) {
                 //请求参数
                 String str = buffer.readString(charset);
-                try {
-                    //添加公共请求参数
-                    JSONObject json = new JSONObject(str);
-                    Map parameter = CommonParam.getInstance().getMap();
-                    Iterator iterator = parameter.entrySet().iterator();
-                    while (iterator.hasNext()) {
-                        Map.Entry entry = (Map.Entry) iterator.next();
-                        json.put((String) entry.getKey(), entry.getValue());
-                    }
-                    log(json.toString());
-                    e("file", json.toString());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    AppLogger.e("file", e.toString());
-                }
-
+                log("body : " + str);
             }
 
         }
+
+
         log("--------------------------------------------------------------------Response--------------------------------------------------------------------");
+
         Headers headers = response.headers();
-        for (int i = 0, count = headers.size(); i < count; i++) {
+        for (
+                int i = 0, count = headers.size();
+                i < count; i++) {
             log(headers.name(i) + ": " + headers.value(i));
         }
+
         ResponseBody responseBody = response.body();
         long contentLength = responseBody.contentLength();
 

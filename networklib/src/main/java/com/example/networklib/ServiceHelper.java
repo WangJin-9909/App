@@ -16,9 +16,6 @@ public class ServiceHelper {
     private static ServiceHelper instance = null;
     private static AppService appService;
     public static String HOST;
-    //public static String HOST = "http://10.159.41.28:49000/";
-    //public static String HOST = "http://10.133.46.17:8081/api/";
-
 
     public static void initHost(String HOST) {
         ServiceHelper.HOST = HOST;

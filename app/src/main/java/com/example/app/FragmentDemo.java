@@ -34,7 +34,7 @@ public class FragmentDemo extends BaseFragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_post_1:
-
+                wanAdnroidRegister();
                 break;
             case R.id.btn_post_2:
 
@@ -44,6 +44,26 @@ public class FragmentDemo extends BaseFragment {
     }
 
 
+    private void wanAdnroidRegister() {
+        ServiceHelper.getNetworkServer().signup("username1234", "username1234", "username1234")
+                .compose(ServiceHelper.getDefaultScheduler())
+                .subscribe(new Subscriber<BaseResponse>() {
+                    @Override
+                    public void onCompleted() {
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        AppToast.showToast(getContext(), e.toString());
+
+                    }
+
+                    @Override
+                    public void onNext(BaseResponse jsonObjectBaseResponse) {
+                        AppToast.showToast(getContext(), jsonObjectBaseResponse.toString());
+                    }
+                });
+    }
 
 
     @Override
@@ -61,40 +81,5 @@ public class FragmentDemo extends BaseFragment {
 
 
 
-    class RegBean{
-        String username;
-        String password;
-        String repassword;
-
-        public RegBean(String username, String password, String repassword) {
-            this.username = username;
-            this.password = password;
-            this.repassword = repassword;
-        }
-
-        public String getUsername() {
-            return username;
-        }
-
-        public void setUsername(String username) {
-            this.username = username;
-        }
-
-        public String getPassword() {
-            return password;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
-        }
-
-        public String getRepassword() {
-            return repassword;
-        }
-
-        public void setRepassword(String repassword) {
-            this.repassword = repassword;
-        }
-    }
 
 }
