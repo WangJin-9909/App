@@ -1,3 +1,5 @@
+include ':utils'
+include ':networklib'
 include ':core-ui'
 include ':framework'
 include ':app'

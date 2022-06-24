@@ -14,4 +14,19 @@
         android:gravity="center_horizontal"
         android:text="text"
         android:textSize="28sp" />
+
+
+    <Button
+        android:id="@+id/btn_post_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="验证码接口" />
+
+    <Button
+        android:id="@+id/btn_post_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="注册" />
+
+
 </LinearLayout>
