@@ -123,7 +123,7 @@ public class LoggingInterceptor implements Interceptor {
     }
 
     private void log(String log) {
-        AppLogger.e(TAG, log);
+        /*AppLogger.*/e(TAG, log);
     }
 
     public void e(String tag, String msg) {
