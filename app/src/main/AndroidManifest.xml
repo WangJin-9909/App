@@ -15,6 +15,9 @@
 
         </activity>
         <activity android:name=".VideoActivity">
+
+        </activity>
+        <activity android:name=".ui.TikTok2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

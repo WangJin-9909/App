@@ -4,4 +4,5 @@ include ':networklib'
 include ':core-ui'
 include ':framework'
 include ':app'
+include ':dkplayer-videocache'
 rootProject.name = "App"
