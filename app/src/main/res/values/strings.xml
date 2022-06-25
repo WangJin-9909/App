@@ -2,4 +2,6 @@
     <string name="app_name">App</string>
     <string name="dkplayer_error_message">出了点小问题，请稍后重试</string>
     <string name="str_tiktok_2">抖音 (VerticalViewPager)</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 </resources>
