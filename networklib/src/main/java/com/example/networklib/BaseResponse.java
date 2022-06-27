@@ -4,44 +4,50 @@ import com.google.gson.JsonObject;
 
 import java.io.Serializable;
 
-public class BaseResponse implements Serializable {
-    public String errorCode;
-    public String errorMsg;
-    public String  data;
+public class BaseResponse<T> {
+    public String resultCode;
+    public String resultMsg;
+    public String traceNo;
+    public T msg;
 
-    public BaseResponse() {
+
+
+    public BaseResponse(String resultCode, String resultMsg, String traceNo, T msg) {
+        this.resultCode = resultCode;
+        this.resultMsg = resultMsg;
+        this.traceNo = traceNo;
+        this.msg = msg;
     }
 
-    public String getErrorCode() {
-        return errorCode;
+    public String getResultCode() {
+        return resultCode;
     }
 
-    public void setErrorCode(String errorCode) {
-        this.errorCode = errorCode;
+    public void setResultCode(String resultCode) {
+        this.resultCode = resultCode;
     }
 
-    public String getErrorMsg() {
-        return errorMsg;
+    public String getResultMsg() {
+        return resultMsg;
     }
 
-    public void setErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
+    public void setResultMsg(String resultMsg) {
+        this.resultMsg = resultMsg;
     }
 
-    public String getData() {
-        return data;
+    public String getTraceNo() {
+        return traceNo;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public void setTraceNo(String traceNo) {
+        this.traceNo = traceNo;
     }
 
-    @Override
-    public String toString() {
-        return "BaseResponse{" +
-                "errorCode='" + errorCode + '\'' +
-                ", errorMsg='" + errorMsg + '\'' +
-                ", data=" + data +
-                '}';
+    public T getMsg() {
+        return msg;
+    }
+
+    public void setMsg(T msg) {
+        this.msg = msg;
     }
 }

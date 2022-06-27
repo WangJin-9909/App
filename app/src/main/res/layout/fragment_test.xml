@@ -20,13 +20,7 @@
         android:id="@+id/btn_post_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="验证码接口" />
-
-    <Button
-        android:id="@+id/btn_post_2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="注册" />
+        android:text="从服务器获取app版本" />
 
 
 </LinearLayout>
