@@ -30,15 +30,13 @@ public class FragmentDemo extends BaseFragment {
     }
 
 
-    @OnClick({R.id.btn_post_1, R.id.btn_post_2})
+    @OnClick({R.id.btn_post_1})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_post_1:
                 wanAdnroidRegister();
                 break;
-            case R.id.btn_post_2:
 
-                break;
 
         }
     }
